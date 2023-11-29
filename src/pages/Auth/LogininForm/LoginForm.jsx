@@ -3,17 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { Field, Form, Formik } from "formik";
 import { useDispatch } from "react-redux";
 import { signinQuery } from "../../../redux/AuthSlice/signinSlice";
-import { setTokenkeys } from "../../../services/AxiosService/tokenMethods";
+
 function LoginForm() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleSubmit = async (values) => {
-    const signinData = await dispatch(signinQuery(values));
-    const { data } = signinData.payload;
-    const { authToken, refreshToken } = JSON.parse(data);
-    console.log(data);
-    setTokenkeys(authToken, refreshToken);
+    await dispatch(signinQuery(values));
     navigate("/homepage");
   };
 

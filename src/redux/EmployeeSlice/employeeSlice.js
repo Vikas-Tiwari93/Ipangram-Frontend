@@ -5,10 +5,10 @@ let initialState = {
   isLoadingSignin: false,
 };
 export const employeesQuery = createAsyncThunk("employeesQuery", async () => {
-  return getRequest(`/employee/list`, {
+  const fetch = await getRequest(`/employee/list`, {
     isAuth: true,
-    isJson: true,
   });
+  return fetch.data;
 });
 const employeeSlice = createSlice({
   name: "employeeSlice",
@@ -19,8 +19,8 @@ const employeeSlice = createSlice({
       state.isLoadingSignin = true;
     }),
       builder.addCase(employeesQuery.fulfilled, (state, action) => {
-        let actudalData = JSON.parse(action.payload.data);
-        state.EmployeesList = [{ ...actudalData }];
+        state.EmployeesList = [{ ...JSON.parse(action.payload) }];
+        console.log(JSON.parse(action.payload));
         state.isLoadingSignin = false;
       }),
       builder.addCase(employeesQuery.rejected, (state) => {

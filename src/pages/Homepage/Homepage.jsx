@@ -9,7 +9,7 @@ import { employeesQuery } from "../../redux/EmployeeSlice/employeeSlice";
 export default function Homepage() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  let employeeList = useSelector((state) => state.employeeSlice.EmployeesList);
+  // let employeeList = useSelector((state) => state.employeeSlice.EmployeesList);
   const signOuthandleClick = () => {
     removeTokenKeys();
     navigate("/");
@@ -19,7 +19,7 @@ export default function Homepage() {
   useEffect(() => {
     dispatch(employeesQuery());
   }, []);
-  console.log(employeeList);
+
   return (
     <>
       <div className="AuthHead">
