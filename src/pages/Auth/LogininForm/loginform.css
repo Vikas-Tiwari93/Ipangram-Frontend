@@ -1,0 +1,80 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+padding:10px;
+    position:absolute;
+    top:20%;
+    left:40%;
+  }
+  
+  .login-form {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-form h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .login-form label {
+    display: block;
+    margin: 10px 0;
+    color: #555;
+  }
+  
+
+  #username,#password{
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 15px 0;
+    box-sizing: border-box;
+  }
+  .closebutton {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+    right: 5px;
+    background-color: white;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+  }
+ .closebutton:hover {
+    border: 1px solid grey;
+    box-shadow: 1px 1px 1px 1px grey;
+    cursor: pointer;
+  }
+  .usertype{
+    padding:10px;
+    display: flex;
+    gap:20px;
+  }
+  .submit{
+    padding:10px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .login-form button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .login-form button:hover {
+    background-color: #45a049;
+  }
